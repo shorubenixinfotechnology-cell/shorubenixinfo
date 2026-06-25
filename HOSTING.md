@@ -56,25 +56,26 @@ Render is an excellent platform for hosting Python servers for free.
 
 ---
 
-## 3. ⚛️ Deploy React Frontend (Vercel)
-Vercel is the recommended hosting platform for React/Vite frontends.
+## 3. ⚛️ Deploy React Frontend (Netlify)
+Netlify is the recommended hosting platform for React/Vite frontends in your setup.
 
-1. Go to [Vercel](https://vercel.com/) and sign up with your GitHub account.
-2. Click **Add New -> Project**.
-3. Select your GitHub repository **`shorubenixinfo`** and click **Import**.
-4. Configure the project settings:
-   * **Framework Preset**: `Vite`
-   * **Root Directory**: `./` (Leave as default)
-   * **Build and Development Settings**: Leave as default (`npm run build`, output directory `dist`).
-5. Expand the **Environment Variables** section and add:
+1. Go to [Netlify](https://www.netlify.com/) and sign up or log in.
+2. Click **Add new site -> Import an existing project**.
+3. Select GitHub and choose your repository **`shorubenixinfo`**.
+4. Configure the build settings:
+   * **Branch to deploy**: `main`
+   * **Base directory**: Leave empty (root directory)
+   * **Build command**: `npm run build`
+   * **Publish directory**: `dist`
+5. Expand the **Environment variables** section (or set it after importing under Site Configuration -> Environment Variables) and add:
    * **Key**: `VITE_API_URL`
    * **Value**: `https://shorubenix-api.onrender.com/api` (⚠️ *Replace this with your actual Render backend URL followed by `/api`*)
-6. Click **Deploy**. Vercel will build and host your website, providing a custom production domain name!
+6. Click **Deploy shorubenixinfo**. Netlify will build and host your website, providing a custom production subdomain (e.g. `shorubenix.netlify.app`).
 
 ---
 
 ### 🔄 Verification Check
 Once both deployments complete:
-1. Navigate to your Vercel URL in your browser.
+1. Navigate to your Netlify URL in your browser.
 2. Submit a callback request on the contact page or register a user.
 3. Check the MongoDB Atlas collections and confirm the new entries are saved.
